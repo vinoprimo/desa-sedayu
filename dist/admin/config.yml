@@ -2,7 +2,7 @@ backend:
   name: github
   repo: vinoprimo/desa-sedayu
   branch: main
-  base_url: https://desa-sedayu.gahzyokta.workers.dev
+  base_url: https://desa-sedayu.pages.dev
   auth_endpoint: api/auth
 
 media_folder: public/uploads
