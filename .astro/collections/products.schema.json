@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Makanan",
+        "Minuman",
+        "Kerajinan",
+        "Pertanian",
+        "Jasa",
+        "Lainnya"
+      ]
+    },
+    "price": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "featured": {
+      "default": false,
+      "type": "boolean"
+    },
+    "available": {
+      "default": true,
+      "type": "boolean"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "price",
+    "owner",
+    "whatsapp",
+    "location",
+    "image"
+  ]
+}

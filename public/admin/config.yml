@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: your-org/desa-sedayu
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: id
+
+collections:
+  - name: products
+    label: Produk UMKM
+    folder: src/content/products
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Nama Produk, name: name, widget: string }
+      - label: Kategori
+        name: category
+        widget: select
+        options: [Makanan, Minuman, Kerajinan, Pertanian, Jasa, Lainnya]
+      - { label: Harga, name: price, widget: string, hint: "Contoh: Rp12.000 / bungkus" }
+      - { label: Nama Pemilik, name: owner, widget: string }
+      - { label: WhatsApp, name: whatsapp, widget: string, hint: "Gunakan format 628..., tanpa tanda +" }
+      - { label: Lokasi, name: location, widget: string }
+      - { label: Foto Produk, name: image, widget: image }
+      - { label: Produk Unggulan, name: featured, widget: boolean, default: false }
+      - { label: Masih Tersedia, name: available, widget: boolean, default: true }
+      - { label: Deskripsi, name: body, widget: markdown }
+
+  - name: news
+    label: Berita dan Pengumuman
+    folder: src/content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Judul, name: title, widget: string }
+      - { label: Tanggal, name: date, widget: datetime, format: YYYY-MM-DD }
+      - { label: Ringkasan, name: summary, widget: text }
+      - label: Jenis
+        name: type
+        widget: select
+        options:
+          - { label: Pengumuman, value: pengumuman }
+          - { label: Berita, value: berita }
+      - { label: Gambar, name: image, widget: image, required: false }
+      - { label: Isi, name: body, widget: markdown }

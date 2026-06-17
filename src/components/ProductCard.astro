@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { entrySlug } from '../utils/content';
+
+interface Props {
+  product: CollectionEntry<'products'>;
+}
+
+const { product } = Astro.props;
+const message = encodeURIComponent(`Halo, saya tertarik dengan produk ${product.data.name} dari Katalog UMKM Desa Sedayu.`);
+const whatsappUrl = `https://wa.me/${product.data.whatsapp}?text=${message}`;
+const slug = entrySlug(product.id);
+---
+
+<article class="product-card">
+  <a class="product-photo" href={`/produk/${slug}/`}>
+    <img src={product.data.image} alt={`Foto ${product.data.name}`} loading="lazy" />
+  </a>
+  <div class="product-body">
+    <div class="product-topline">
+      <span class="pill">{product.data.category}</span>
+      {product.data.available ? <span class="status">Tersedia</span> : <span class="status muted-status">Stok habis</span>}
+    </div>
+    <h3><a href={`/produk/${slug}/`}>{product.data.name}</a></h3>
+    <p class="price">{product.data.price}</p>
+    <p class="muted">Pemilik: {product.data.owner}</p>
+    <p class="muted">Lokasi: {product.data.location}</p>
+    <div class="product-actions">
+      <a class="button compact" href={whatsappUrl}>WhatsApp</a>
+      <a class="button secondary compact" href={`/produk/${slug}/`}>Detail</a>
+    </div>
+  </div>
+</article>

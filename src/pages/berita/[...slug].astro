@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entrySlug } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((post) => ({
+    params: { slug: entrySlug(post.id) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.summary}>
+  <section class="section page-header">
+    <div class="section-inner article">
+      <span class="pill">{post.data.type}</span>
+      <h1>{post.data.title}</h1>
+      <time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString('id-ID')}</time>
+    </div>
+  </section>
+  <section class="section">
+    <article class="section-inner article">
+      <Content />
+    </article>
+  </section>
+</BaseLayout>

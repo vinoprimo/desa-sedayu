@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Kopi Robusta Sedayu</title>
+  <desc id="desc">Ilustrasi kemasan kopi robusta.</desc>
+  <rect width="640" height="480" fill="#efe7d1"/>
+  <path d="M206 76h228l-28 348H234Z" fill="#49352b"/>
+  <path d="M238 126h164v92H238z" fill="#fff7df"/>
+  <circle cx="320" cy="300" r="54" fill="#c49135"/>
+  <path d="M296 296c-9-23 10-45 30-51 10 28-2 48-30 51Zm48 8c8 24-13 44-34 49-7-29 5-48 34-49Z" fill="#49352b"/>
+  <text x="320" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#1f2a24">Kopi</text>
+  <text x="320" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1f2a24">Robusta</text>
+</svg>

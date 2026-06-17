@@ -1,0 +1,22 @@
+{
+  "name": "desa-sedayu-static-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "qr:catalog": "node scripts/generate-catalog-qr.mjs"
+  },
+  "dependencies": {
+    "astro": "^6.4.7",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  }
+}

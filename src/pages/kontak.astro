@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Kontak" description="Kontak dan alamat kantor Desa Sedayu.">
+  <section class="section page-header">
+    <div class="section-inner">
+      <p class="eyebrow">Kontak</p>
+      <h1>Hubungi Kantor Desa Sedayu.</h1>
+      <p class="lead">Gunakan informasi berikut untuk keperluan pelayanan, kunjungan, dan koordinasi resmi.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner two-col">
+      <div class="card">
+        <h3>Informasi kantor</h3>
+        <p><strong>Alamat:</strong><br />{site.address}</p>
+        <p><strong>Telepon:</strong><br />{site.phone}</p>
+        <p><strong>Email:</strong><br />{site.email}</p>
+        <p><strong>Jam pelayanan:</strong><br />{site.hours}</p>
+        <div class="button-row">
+          <a class="button" href={site.mapUrl}>Buka Peta</a>
+        </div>
+      </div>
+      <div>
+        <h2>Catatan pengelolaan</h2>
+        <p>Nomor WhatsApp resmi, email aktif, dan lokasi peta sebaiknya diverifikasi sebelum website dipublikasikan. Informasi kontak adalah bagian yang paling sering dicari warga, jadi sebaiknya dijaga tetap akurat.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

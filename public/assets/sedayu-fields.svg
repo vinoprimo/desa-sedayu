@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustrasi bentang desa dan lahan pertanian</title>
+  <desc id="desc">Ilustrasi sederhana desa, persawahan, jalan, dan balai desa untuk identitas visual Website Desa Sedayu.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#d9eef7"/>
+      <stop offset="1" stop-color="#fff7df"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#78a95b"/>
+      <stop offset="1" stop-color="#d6b85c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1280" cy="180" r="78" fill="#f2b84b"/>
+  <path d="M0 455c170-52 346-75 530-39 186 36 279 94 455 43 205-58 351-74 615 0v441H0Z" fill="#6f8f65"/>
+  <path d="M0 560c240-76 431-42 621 3 260 61 457 31 979-27v364H0Z" fill="url(#field)"/>
+  <path d="M0 744c235-53 400-73 628-57 251 18 468 15 972-72v285H0Z" fill="#b08b49" opacity=".55"/>
+  <path d="M760 900c88-143 145-259 177-348 18-49 51-57 76-7 48 96 129 214 242 355Z" fill="#e7dec7"/>
+  <path d="M889 900c48-115 79-213 100-305 7-32 19-35 29-2 29 100 83 202 161 307Z" fill="#cfc3aa"/>
+  <g transform="translate(520 356)">
+    <rect x="0" y="124" width="334" height="150" fill="#f5f0e3"/>
+    <rect x="36" y="168" width="62" height="62" fill="#365f64"/>
+    <rect x="134" y="162" width="68" height="112" fill="#8b5137"/>
+    <rect x="238" y="168" width="62" height="62" fill="#365f64"/>
+    <path d="M-32 132 166 0l198 132Z" fill="#9f3d2f"/>
+    <path d="M166 0 364 132H-32Z" fill="#6d312a" opacity=".28"/>
+    <rect x="-20" y="132" width="374" height="22" fill="#6a4b35"/>
+    <rect x="18" y="274" width="298" height="18" fill="#6a4b35"/>
+  </g>
+  <g fill="none" stroke="#efe7c7" stroke-width="4" opacity=".65">
+    <path d="M90 635c226-37 375-23 553 4"/>
+    <path d="M70 696c245-46 399-43 602-9"/>
+    <path d="M1040 632c158-22 323-47 507-79"/>
+    <path d="M1102 710c151-14 299-37 442-72"/>
+  </g>
+</svg>

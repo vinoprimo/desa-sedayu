@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Batik Ecoprint</title>
+  <desc id="desc">Ilustrasi kain ecoprint bermotif daun.</desc>
+  <rect width="640" height="480" fill="#eef4ed"/>
+  <path d="M150 86h340c24 0 44 20 44 44v252c0 24-20 44-44 44H150c-24 0-44-20-44-44V130c0-24 20-44 44-44Z" fill="#fff7df"/>
+  <path d="M180 138c70 38 154 38 224 0 46 74 46 153 0 238-70-35-154-35-224 0-45-85-45-164 0-238Z" fill="#d8b46a"/>
+  <g fill="#2f6b4f">
+    <path d="M256 180c-48 15-75 48-79 97 50-9 84-37 101-84Z"/>
+    <path d="M402 260c-48 15-75 48-79 97 50-9 84-37 101-84Z"/>
+    <path d="M350 145c-28 35-32 72-11 112 36-28 48-63 37-105Z"/>
+  </g>
+</svg>

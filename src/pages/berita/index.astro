@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entrySlug } from '../../utils/content';
+
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout title="Berita dan Pengumuman" description="Berita dan pengumuman terbaru Desa Sedayu.">
+  <section class="section page-header">
+    <div class="section-inner">
+      <p class="eyebrow">Berita</p>
+      <h1>Berita dan pengumuman Desa Sedayu.</h1>
+      <p class="lead">Konten di halaman ini dapat diperbarui melalui Decap CMS.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner news-list">
+      {news.map((item) => (
+        <a class="news-item" href={`/berita/${entrySlug(item.id)}/`}>
+          <span class="pill">{item.data.type}</span>
+          <h2>{item.data.title}</h2>
+          <p class="muted">{item.data.summary}</p>
+          <time datetime={item.data.date.toISOString()}>{item.data.date.toLocaleDateString('id-ID')}</time>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

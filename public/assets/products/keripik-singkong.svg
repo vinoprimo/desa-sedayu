@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Keripik Singkong Sedayu</title>
+  <desc id="desc">Ilustrasi kemasan keripik singkong.</desc>
+  <rect width="640" height="480" fill="#f4ead7"/>
+  <circle cx="122" cy="88" r="72" fill="#e0b24d"/>
+  <rect x="186" y="70" width="268" height="348" rx="26" fill="#2f6b4f"/>
+  <path d="M222 114h196v80H222z" fill="#fff7df"/>
+  <path d="M250 246c38-42 101-42 140 0 18 20 11 52-15 68-31 19-81 19-112 0-26-16-31-48-13-68Z" fill="#d6a33d"/>
+  <path d="M272 254c21-18 60-18 81 0" fill="none" stroke="#9f7432" stroke-width="12" stroke-linecap="round"/>
+  <text x="320" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#1f2a24">Keripik</text>
+  <text x="320" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1f2a24">Singkong</text>
+</svg>

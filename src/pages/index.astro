@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { site } from '../data/site';
+import { entrySlug } from '../utils/content';
+
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+).slice(0, 3);
+
+const featuredProducts = (await getCollection('products'))
+  .filter((product) => product.data.featured)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<BaseLayout title={site.name}>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Proker KKN</p>
+      <h1>Katalog Digital Produk Unggulan Desa.</h1>
+      <p class="lead">
+        Website sederhana untuk mendata, menampilkan, dan membagikan produk UMKM Desa Sedayu lewat satu link katalog dan poster QR.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/produk/">Lihat Katalog</a>
+        <a class="button secondary" href="/poster-qr/">Poster QR</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-strip" aria-label="Informasi cepat">
+    <div>
+      <strong>Data Produk</strong>
+      <p>Nama, harga, foto, pemilik, kontak, dan lokasi.</p>
+    </div>
+    <div>
+      <strong>Link Katalog</strong>
+      <p>{site.catalogUrl}</p>
+    </div>
+    <div>
+      <strong>Media Promosi</strong>
+      <p>Poster QR untuk WhatsApp, Instagram, dan papan informasi desa.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="eyebrow">Produk unggulan</p>
+      <h2>Contoh tampilan katalog UMKM desa</h2>
+      <div class="product-grid">
+        {featuredProducts.map((product) => <ProductCard product={product} />)}
+      </div>
+      <div class="button-row">
+        <a class="button secondary" href="/produk/">Lihat semua produk</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="section-inner two-col">
+      <div>
+        <p class="eyebrow">Alur proker</p>
+        <h2>Dari pendataan sampai promosi cukup satu alur sederhana.</h2>
+        <p class="lead">Tim KKN mendata produk, memotret, mengisi data di CMS, lalu menyebarkan link katalog dan poster QR melalui media sosial desa.</p>
+      </div>
+      <ol class="step-list">
+        <li><strong>1. Data UMKM</strong><span>Nama produk, harga, pemilik, nomor WhatsApp, dan lokasi.</span></li>
+        <li><strong>2. Foto Produk</strong><span>Foto sederhana dengan cahaya terang dan latar bersih.</span></li>
+        <li><strong>3. Publikasi</strong><span>Produk tampil di website, siap dibagikan lewat satu link katalog.</span></li>
+        <li><strong>4. Promosi QR</strong><span>Poster QR bisa dicetak atau diunggah ke media sosial desa.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner two-col">
+      <div>
+        <p class="eyebrow">Berita pendukung</p>
+        <h2>Pengumuman kegiatan katalog</h2>
+      </div>
+      <div class="news-list">
+        {news.map((item) => (
+          <a class="news-item" href={`/berita/${entrySlug(item.id)}/`}>
+            <span class="pill">{item.data.type}</span>
+            <h3>{item.data.title}</h3>
+            <p class="muted">{item.data.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

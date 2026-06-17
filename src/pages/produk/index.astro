@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = (await getCollection('products')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const categories = [...new Set(products.map((product) => product.data.category))].sort();
+---
+
+<BaseLayout title="Katalog Produk" description="Katalog digital produk UMKM Desa Sedayu.">
+  <section class="section page-header catalog-header">
+    <div class="section-inner two-col">
+      <div>
+        <p class="eyebrow">Katalog digital</p>
+        <h1>Produk UMKM Desa Sedayu</h1>
+        <p class="lead">Temukan produk lokal desa, lihat harga, lokasi penjual, dan hubungi pemilik langsung melalui WhatsApp.</p>
+      </div>
+      <aside class="catalog-note">
+        <strong>Catatan untuk tim KKN</strong>
+        <p>Data ini masih contoh. Ganti dengan hasil pendataan, foto asli, harga terbaru, dan kontak pemilik yang sudah memberi izin publikasi.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="category-strip" aria-label="Kategori produk">
+        {categories.map((category) => <span>{category}</span>)}
+      </div>
+      <div class="product-grid">
+        {products.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

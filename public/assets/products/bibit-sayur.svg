@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Bibit Sayur Organik</title>
+  <desc id="desc">Ilustrasi bibit sayur dalam polybag.</desc>
+  <rect width="640" height="480" fill="#eef4ed"/>
+  <path d="M226 272h188l-30 142H256Z" fill="#49352b"/>
+  <path d="M318 282c-18-84 12-145 88-184 16 82-14 143-88 184Z" fill="#2f6b4f"/>
+  <path d="M316 282c-64-42-84-99-60-171 64 38 84 95 60 171Z" fill="#78a95b"/>
+  <path d="M318 282v-96" stroke="#174631" stroke-width="10" stroke-linecap="round"/>
+  <path d="M258 338h122" stroke="#6d4b2f" stroke-width="12" stroke-linecap="round"/>
+</svg>

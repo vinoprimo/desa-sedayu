@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entrySlug } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({
+    params: { slug: entrySlug(product.id) },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+const message = encodeURIComponent(`Halo, saya tertarik dengan produk ${product.data.name} dari Katalog UMKM Desa Sedayu.`);
+const whatsappUrl = `https://wa.me/${product.data.whatsapp}?text=${message}`;
+---
+
+<BaseLayout title={product.data.name} description={`Detail produk ${product.data.name} dari ${product.data.owner}.`}>
+  <section class="section product-detail">
+    <div class="section-inner product-detail-grid">
+      <div class="detail-image">
+        <img src={product.data.image} alt={`Foto ${product.data.name}`} />
+      </div>
+      <article>
+        <span class="pill">{product.data.category}</span>
+        <h1>{product.data.name}</h1>
+        <p class="price large">{product.data.price}</p>
+        <div class="detail-meta">
+          <p><strong>Pemilik</strong><span>{product.data.owner}</span></p>
+          <p><strong>Lokasi</strong><span>{product.data.location}</span></p>
+          <p><strong>Status</strong><span>{product.data.available ? 'Tersedia' : 'Stok habis'}</span></p>
+        </div>
+        <div class="article">
+          <Content />
+        </div>
+        <div class="button-row">
+          <a class="button" href={whatsappUrl}>Hubungi via WhatsApp</a>
+          <a class="button secondary" href="/produk/">Kembali ke Katalog</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  'Pengantar KTP',
+  'Kartu Keluarga',
+  'Surat Pindah Tempat',
+  'Akta Kelahiran',
+  'SKCK',
+  'Surat Keterangan Tidak Mampu',
+];
+---
+
+<BaseLayout title="Layanan Masyarakat" description="Informasi layanan administrasi masyarakat Desa Sedayu.">
+  <section class="section page-header">
+    <div class="section-inner">
+      <p class="eyebrow">Layanan</p>
+      <h1>Informasi layanan administrasi warga.</h1>
+      <p class="lead">Halaman ini dibuat sederhana agar warga langsung tahu dokumen apa yang perlu dibawa sebelum datang ke kantor desa.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <div class="grid">
+        {services.map((service) => (
+          <article class="card">
+            <h3>{service}</h3>
+            <p class="muted">Lengkapi bagian ini dengan persyaratan, alur pelayanan, estimasi waktu, dan kontak petugas.</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

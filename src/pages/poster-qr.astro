@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Poster QR Katalog" description="Poster QR untuk katalog digital produk UMKM Desa Sedayu.">
+  <section class="poster-page">
+    <div class="poster-sheet">
+      <p class="poster-kicker">Katalog Digital Produk Unggulan Desa</p>
+      <h1>Scan QR untuk melihat produk UMKM Desa Sedayu</h1>
+      <div class="poster-qr">
+        <img src="/assets/qr-katalog.svg" alt="QR menuju katalog produk UMKM Desa Sedayu" />
+      </div>
+      <p class="poster-link">{site.catalogUrl}</p>
+      <p class="poster-note">Dukung produk lokal desa. Hubungi pemilik produk langsung melalui katalog.</p>
+    </div>
+    <div class="poster-actions">
+      <a class="button" href="/produk/">Buka Katalog</a>
+      <button class="button secondary" type="button" onclick="window.print()">Cetak Poster</button>
+    </div>
+  </section>
+</BaseLayout>

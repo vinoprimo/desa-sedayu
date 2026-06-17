@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Telur Asin Rumahan</title>
+  <desc id="desc">Ilustrasi telur asin dalam keranjang.</desc>
+  <rect width="640" height="480" fill="#f4ead7"/>
+  <path d="M152 266h336l-42 126H194Z" fill="#9f7432"/>
+  <path d="M176 266h288" stroke="#6d4b2f" stroke-width="24" stroke-linecap="round"/>
+  <g fill="#d7e5dc">
+    <ellipse cx="230" cy="232" rx="52" ry="72"/>
+    <ellipse cx="318" cy="216" rx="54" ry="76"/>
+    <ellipse cx="408" cy="234" rx="52" ry="72"/>
+  </g>
+  <path d="M210 320h220" stroke="#6d4b2f" stroke-width="12" stroke-linecap="round"/>
+</svg>
