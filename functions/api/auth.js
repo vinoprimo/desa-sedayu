@@ -1,0 +1,26 @@
+export async function onRequestGet({ env, request }) {
+  const url = new URL(request.url);
+  const clientId = env.GITHUB_CLIENT_ID;
+
+  if (!clientId) {
+    return new Response('Missing GITHUB_CLIENT_ID environment variable.', { status: 500 });
+  }
+
+  const state = crypto.randomUUID();
+  const scope = url.searchParams.get('scope') || 'repo';
+  const redirectUri = `${url.origin}/api/callback`;
+  const authorizeUrl = new URL('https://github.com/login/oauth/authorize');
+
+  authorizeUrl.searchParams.set('client_id', clientId);
+  authorizeUrl.searchParams.set('redirect_uri', redirectUri);
+  authorizeUrl.searchParams.set('scope', scope);
+  authorizeUrl.searchParams.set('state', state);
+
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: authorizeUrl.toString(),
+      'Set-Cookie': `decap_oauth_state=${state}; HttpOnly; Secure; SameSite=Lax; Path=/api/; Max-Age=600`,
+    },
+  });
+}
